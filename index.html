@@ -198,19 +198,21 @@
 						<form id="contact-form" method="post" class="form afsana-form" role="form">
 							<div class="row">
 								<div class="col-sm-12 form-group">
-									<input class="form-control afsana-style" id="name" name="name" placeholder="Name" type="text" required autofocus />
+									<input class="form-control afsana-style" id="contact-name" name="name" placeholder="Name" type="text" required autofocus />
 								</div>
 								<div class="col-sm-12 form-group">
-									<input class="form-control afsana-style" id="email" name="email" placeholder="Email" type="email" required />
+									<input class="form-control afsana-style" id="contact-email" name="email" placeholder="Email" type="email" required />
 								</div>
 								<div class="col-sm-12 form-group">
-									<textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+									<textarea class="form-control" id="contact-message" name="message" placeholder="Message" rows="5"></textarea>
 								</div>
 								<div class="col-sm-12 form-group">
-									<button class="btn btn-primary afsana-btn" type="submit">Send <i class="ion-arrow-graph-up-right"></i></button>
+									<button class="btn btn-primary afsana-btn" id="contact-button" type="submit">Send <i class="ion-arrow-graph-up-right"></i></button>
 								</div>
 							</div>
 						</form>
+						<!-- SUCCESS OR ERROR MESSAGES -->
+						<div id="contact-response"></div>
 					</div>
 
 					<div class="col-sm-6  wow fadeInRight">

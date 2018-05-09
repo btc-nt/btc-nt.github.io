@@ -135,3 +135,44 @@ $('#subscribe-form').submit(function(e) {
     });
 
 });
+
+/*------------------------------------------
+ Contact form ajax
+ ------------------------------------------*/
+
+
+ $('#contact-form').submit(function(e) {
+
+    e.preventDefault();
+    var $form           = $('#contact-form');
+    var submit          = $('#contact-button');
+    var ajaxResponse    = $('#contact-response');
+    var name            = $('#contact-name').val();
+    var email           = $('#contact-email').val();
+    var message         = $('#contact-message').val();
+
+    $.ajax({
+        type: 'POST',
+        url: 'https://labs.katasonov.com/bitcoin-contact.php',
+        dataType: 'json',
+        data: {
+            name: name,
+            email: email,
+            message: message,
+        },
+        cache: false,
+        beforeSend: function(result) {
+            submit.val("Sending...");
+        },
+        success: function(result) {
+            if(result.sendstatus == 1) {
+                ajaxResponse.html(result.message);
+                $form.fadeOut(500);
+            } else {
+                ajaxResponse.html(result.message);
+                submit.val("Send");
+            }
+        }
+    });
+
+});
